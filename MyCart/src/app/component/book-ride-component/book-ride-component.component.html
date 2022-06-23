@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row align-items-center vh-100">
+    <div class="col-6 mx-auto">
+      <div class="card shadow border">
+        <div class="card-header">
+          <p>Book a Ride</p>
+        </div>
+        <div class="card-body d-flex flex-column align-items-center">
+          <p class="card-text">
+            Pool Carz is an online applicaiton which enable users to share rides
+            with others. You can either book a ride or offer a ride. Did we
+            mention that this app is advertisement free? To add on top of that
+            its free of cost ~ so what are you waiting for ? Check out the rides
+            available and start PCing !!
+          </p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          <div class="col-sm-12 mb-4 text-center">
+            <button (click)="showAllRide()" class="btn btn-primary">
+              Show All Rules
+            </button>
+          </div>
+          <div class="col-sm-12 text-center">
+            <button class="btn btn-primary">Offer a Ride !</button>
+          </div>
+
+          <div *ngIf="showAll">
+            <table class="table mt-2 ">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Starting Point</th>
+                  <th scope="col">End Point</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor = "let rider of riders; let i=index">
+                  <th scope="row">{{rider.id}}</th>
+                  <td>{{rider.name}}</td>
+                  <td>{{rider.pickUp}}</td>
+                  <td>{{rider.destination}}</td>
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
