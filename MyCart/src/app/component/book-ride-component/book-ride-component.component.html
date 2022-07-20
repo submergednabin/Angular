@@ -18,13 +18,25 @@
             <button (click)="showAllRide()" class="btn btn-primary">
               Show All Rules
             </button>
+            <div *ngIf="showAll">
+              <button  class="btn btn-primary">
+                To Office
+              </button>
+              <button class="btn btn-primary">
+                From Office
+              </button>
+              <button class="btn btn-primary">
+                Others
+              </button>
+            </div>
+            
           </div>
           <div class="col-sm-12 text-center">
             <button class="btn btn-primary">Offer a Ride !</button>
           </div>
 
           <div *ngIf="showAll">
-            <table class="table mt-2 ">
+            <table class="table mt-2">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -34,13 +46,15 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor = "let rider of riders; let i=index">
-                  <th scope="row">{{rider.id}}</th>
-                  <td>{{rider.name}}</td>
-                  <td>{{rider.pickUp}}</td>
-                  <td>{{rider.destination}}</td>
+                <tr
+                  [appMouseHoverDirective]="color"
+                  *ngFor="let rider of riders; let i = index"
+                >
+                  <th scope="row">{{ rider.id }}</th>
+                  <td>{{ rider.name }}</td>
+                  <td>{{ rider.pickUp }}</td>
+                  <td>{{ rider.destination }}</td>
                 </tr>
-               
               </tbody>
             </table>
           </div>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookRideComponentComponent implements OnInit {
   showAll: boolean = false;
+  color = '';
   riders: any[] = [
     {
       id: 1,
@@ -43,7 +44,7 @@ export class BookRideComponentComponent implements OnInit {
   ];
   constructor() {}
   showAllRide() {
-    this.showAll = true;
+    this.showAll = !this.showAll;
     console.log(this.riders);
     return this.riders;
   }
