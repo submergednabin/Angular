@@ -1,25 +1,11 @@
-<!-- <h3>Accessing Template Variable using @View Child</h3>
-<div appColorDirective>Modify Color of this Content</div>
-<br />
-<br />
-<div>
-  Modify Color :
-  <input type="radio" name="color" (click)="modifyColor('blue')" />Blue
-  <input type="radio" name="color" (click)="modifyColor('yellow')" />Yellow
-  <input type="radio" name="color" (click)="modifyColor('cyan')" />Cyan
-</div>
 
-<app-registration-form></app-registration-form> -->
-
-<b>Using observables</b>
-<h6 style="margin-bottom: 0">Values:</h6>
-<div *ngFor="let value of myArray">{{ value }}</div>
-<div style="margin-bottom: 0">Errors: {{ errors }}</div>
-<div style="margin-bottom: 0">Finished: {{finished}}</div>
-<button style="margin-top: 2rem" (click)="fetchData()">Fetch Data</button>
 <nav>
-  <a [routerLink]="['/home']" routerLinkActive="active" >Home</a>
+  <a [routerLink]="['/books/dashboard']" routerLinkActive="active" >Home</a>
   <a [routerLink]="['/register']" routerLinkActive="active" >Register</a>
+  <a [routerLink]="['/login']" routerLinkActive="active" >Login</a>
+  <a [routerLink]='["/books"]' routerLinkActive="active">Books</a>
+    <a [routerLink]='["/books/dashboard"]' routerLinkActive="active">Dashboard</a>
 </nav>
 <!-- <app-book></app-book> -->
 <router-outlet></router-outlet>
+

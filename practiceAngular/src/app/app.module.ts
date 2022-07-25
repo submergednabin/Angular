@@ -8,13 +8,18 @@ import { ColorDirectiveDirective } from './directives/color-directive.directive'
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { BookComponent } from './book/book.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ColorDirectiveDirective,
     RegistrationFormComponent,
-    BookComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

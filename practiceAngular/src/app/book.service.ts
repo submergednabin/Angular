@@ -5,9 +5,9 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, tap, map } from 'rxjs/operators';
 import { Book } from './book/book';
-import { BOOKS } from './book/books-data';
+
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +22,12 @@ export class BookService {
       catchError(this.handleError)
     );
   }
+
+  getBook(id: any){
+    return this.getBooks().pipe(map((books)=> books.find((book)=>book.id == id)));
+    
+  }
+  
 
   addBook(book: Book): Observable<any> {
     const options = new HttpHeaders({ 'Content-Type': 'application/json' });
