@@ -1,11 +1,11 @@
 <h2>{{ title }}</h2>
 <h2>My Books</h2>
 <ul class="books">
-  <li *ngFor="let book of books">
-    <span class="badge">{{ book.id }}</span> {{ book.name }}
+  <li *ngFor="let book of books"  (click) = "navigateBook(book.id)"  >
+    <span class="badge" routerLinkActive="router-link-active">{{ book.id }}</span> {{ book.name }}
   </li>
 </ul>
-<button class="btn btn-primary" (click)="ADD_BOOK = true">Add Book</button>&nbsp;
+<button class="btn btn-primary" (click)="ADD_BOOK = !ADD_BOOK ">Add Book</button>&nbsp;
 <button class="btn btn-primary" (click)="UPDATE_BOOK = true">Update Book</button>&nbsp;
 <button class="btn btn-primary" (click)="DELETE_BOOK = true">Delete Book</button>
 <br />

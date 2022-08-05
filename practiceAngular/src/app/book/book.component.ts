@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import { BookService } from '../book.service';
 import { Book } from './book';
 
@@ -14,7 +15,7 @@ export class BookComponent implements OnInit {
   ADD_BOOK!: boolean;
   UPDATE_BOOK!: boolean;
   DELETE_BOOK!: boolean;
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private router:Router) {}
 
   getBooks() {
     this.bookService.getBooks().subscribe({
@@ -27,7 +28,7 @@ export class BookComponent implements OnInit {
     let id = parseInt(bookId);
     this.bookService
       .addBook({ id, name })
-      .subscribe({ next: (book: any) => this.books.push(book) });
+      .subscribe({ next: (book: any) => (this.books.push(book), this.errorMessage="submitted"  ) });
   }
 
   updateBook(bookId: string, name: string): void {
@@ -43,7 +44,12 @@ export class BookComponent implements OnInit {
       .deleteBook(id)
       .subscribe({ next: (book: any) => (this.books = book) });
   }
+  navigateBook(bookId:any){
+    let id = parseInt(bookId)
+    this.router.navigate([`/books/detail/${id}`])
+  }
   ngOnInit(): void {
     this.getBooks();
   }
+
 }

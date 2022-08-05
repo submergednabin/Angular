@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { SortPipe } from './customerPipe/sort.pipe';
+import { SortComponent } from './pipe-component/sort/sort.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { LoginComponent } from './login/login.component';
     ColorDirectiveDirective,
     RegistrationFormComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SortPipe,
+    SortComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

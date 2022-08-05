@@ -11,7 +11,6 @@ const bookRoutes: Routes = [
     component: BookComponent,
     children:[
         {path: 'dashboard', component: DashboardComponent},
-        {path: 'detail/:id', component: BookDetailComponent},
     ],
     canActivate: [LoginGuardService],
   },

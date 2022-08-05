@@ -9,7 +9,7 @@ var bookList = [{  "id":  1,  "name":  "HTML 5"  },
 {  "id":  7,  "name":  "Angular JS 1.x"  },
 {  "id":  8,  "name":  "ng-book 2"  },
 {  "id":  9,  "name":  "Backbone JS"  },
-{  "id":  10,  "name":  "Yeoman"  }
+{  "id":  10,  "name":  "Yeoman"  },
 ]
 
 
