@@ -1,0 +1,64 @@
+<p>book-design works!</p>
+<div class="container">
+  <div class="col-sm-8 mb-2">
+    <select [(ngModel)]="selectedBook">
+      <option *ngFor="let item of books" value="{{ item.name }}">
+        {{ item.name }}
+      </option>
+    </select>
+    <div *ngFor="let book of books">
+      <div *ngIf="selectedBook === book.name">
+        {{ selectedBook }}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <div class="card" style="width: 18rem">
+      <ul  class="list-group list-group-flush mt-4">
+        <li
+          *ngFor="let list of books"
+          class="list-group-item"
+          data-bs-toggle="modal"
+          data-bs-target="#bookModal"
+        >
+          {{ list.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="bookModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="bookModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookModalLabel">Book Details</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Selected: 
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { SortPipe } from './customerPipe/sort.pipe';
 import { SortComponent } from './pipe-component/sort/sort.component';
+import { CustomFormsComponent } from './component/custom-forms/custom-forms.component';
+import { BookDesignComponent } from './component/book-design/book-design.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,17 @@ import { SortComponent } from './pipe-component/sort/sort.component';
     PageNotFoundComponent,
     LoginComponent,
     SortPipe,
-    SortComponent
+    SortComponent,
+    CustomFormsComponent,
+    BookDesignComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

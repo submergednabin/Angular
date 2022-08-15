@@ -8,7 +8,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Book } from './book/book';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -23,11 +22,11 @@ export class BookService {
     );
   }
 
-  getBook(id: any){
-    return this.getBooks().pipe(map((books)=> books.find((book)=>book.id == id)));
-    
+  getBook(id: any) {
+    return this.getBooks().pipe(
+      map((books) => books.find((book) => book.id == id))
+    );
   }
-  
 
   addBook(book: Book): Observable<any> {
     const options = new HttpHeaders({ 'Content-Type': 'application/json' });
