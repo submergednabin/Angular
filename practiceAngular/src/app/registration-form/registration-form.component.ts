@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { RegistrationService } from './registration.service';
 
 @Component({
@@ -8,9 +8,9 @@ import { RegistrationService } from './registration.service';
   styleUrls: ['./registration-form.component.css'],
 })
 export class RegistrationFormComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm!: UntypedFormGroup;
   submitted!: boolean;
-  constructor(private formBuilder: FormBuilder, private regService: RegistrationService) {}
+  constructor(private formBuilder: UntypedFormBuilder, private regService: RegistrationService) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({

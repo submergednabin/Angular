@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { BookService } from 'src/app/book.service';
 import { Book } from 'src/app/book/book';
 
@@ -13,7 +13,7 @@ export class CustomFormsComponent implements OnInit {
   successMessage!: string;
   errMsg!: string;
   selectedBook !:string;
-  constructor(private formBuilder: FormBuilder, private service: BookService) {}
+  constructor(private formBuilder: UntypedFormBuilder, private service: BookService) {}
 
   ngOnInit(): void {
     this.service.getBooks().subscribe({

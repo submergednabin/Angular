@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginServiceService } from '../login-service.service';
 
@@ -10,11 +10,11 @@ import { LoginServiceService } from '../login-service.service';
 })
 export class LoginComponent {
   invalidCredentialMsg!: string;
-  loginForm!: FormGroup;
+  loginForm!: UntypedFormGroup;
   constructor(
     private loginService: LoginServiceService,
     private router: Router,
-    private formbuilder: FormBuilder
+    private formbuilder: UntypedFormBuilder
   ) {
     this.loginForm = this.formbuilder.group({
       username: [],

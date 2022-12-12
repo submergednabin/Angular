@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 
@@ -12,10 +12,10 @@ import {
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  registerForm!: FormGroup;
+  registerForm!: UntypedFormGroup;
   submitted!: boolean;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -50,7 +50,7 @@ export class FormComponent implements OnInit {
   get registerFormControl() {
     return this.registerForm.controls;
   }
-  validateEmail(c: FormControl) {
+  validateEmail(c: UntypedFormControl) {
     let Email_REGEXP =
       /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     return Email_REGEXP.test(c.value)
