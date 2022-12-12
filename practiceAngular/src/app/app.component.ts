@@ -13,6 +13,7 @@ export class AppComponent {
   myArray: number[] = [];
   errors!: boolean;
   finished!: boolean;
+  show:boolean=false;
 
   @ViewChild(ColorDirectiveDirective) colorDirective!: ColorDirectiveDirective;
 

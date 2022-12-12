@@ -17,6 +17,9 @@ import { SortComponent } from './pipe-component/sort/sort.component';
 import { CustomFormsComponent } from './component/custom-forms/custom-forms.component';
 import { BookDesignComponent } from './component/book-design/book-design.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TemplateFormStyleComponent } from './component/template-form-style/template-form-style.component';
+import { CoursesListComponent } from './nestedComponent/courses-list/courses-list.component';
+import { FormComponent } from './registration-form/form/form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SortPipe,
     SortComponent,
     CustomFormsComponent,
-    BookDesignComponent
+    BookDesignComponent,
+    TemplateFormStyleComponent,
+    CoursesListComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

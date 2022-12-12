@@ -1,1 +1,45 @@
-<p>custom-forms works!</p>
+<div class="container">
+  <div class="row">
+    <form
+      class="col-md-6 offset-4"
+      #customForm="ngForm"
+      (ngSubmit)="onClickSubmit(customForm.value)"
+    >
+      <div class="col-sm-5">
+        <div class="form-group mt-3 mb-3">
+          <input
+            type="text"
+            name="fullname"
+            class="form-control"
+            placeholder="Enter Full Name"
+            ngModel
+          />
+        </div>
+        <div class="form-group mb-3">
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter Password"
+            ngModel
+          />
+        </div>
+        <div class="form-group mb-3">
+          <button
+            type="submit"
+            class="btn btn-success"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <div *ngIf="errMsg !==null">
+        {{errMsg}}
+      </div>
+      <!-- <div *ngIf="customForm.value !== null">
+        {{customForm.value}}
+      </div> -->
+  
+    </form>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-md-5 col-md-offset-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Book the Flight</div>
+      <div class="panel-body">
+        <!-- Code the form here  -->
+        <form [formGroup]="bookingForm">
+          <div class="form-group">
+            <label>Passenger Name</label>
+            <input
+              type="text"
+              formControlName="passengerName"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                bookingForm.controls['passengerName'].errors &&
+                bookingForm.controls['passengerName'].touched
+              "
+              class="error-message"
+            >
+              <p
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="bookingForm.controls['passengerName'].errors['required']"
+              >
+                Field Required
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Number of Tickets</label>
+            <input
+              type="number"
+              formControlName="noOfTickets"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                bookingForm.controls['noOfTickets'].errors &&
+                bookingForm.controls['noOfTickets'].touched
+              "
+              class="error-message"
+            >
+              <p
+                [ngStyle]="{ color: 'red' }"
+                *ngIf="bookingForm.controls['noOfTickets'].errors['required']"
+              >
+                Field Required
+              </p>
+              <p [ngStyle]="{ color: 'red' }"  *ngIf="bookingForm.controls['noOfTickets'].errors['min']">
+                Enter the number of tickets greater than 0
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Flight Id</label>
+            <input
+              type="text"
+              formControlName="flightId"
+              class="form-control"
+            />
+            <div
+              *ngIf="bookingForm.controls['flightId'].errors &&
+              bookingForm.controls['flightId'].touched"
+              class="error-message"
+            >
+             <p [ngStyle]="{ color: 'red' }" *ngIf="bookingForm.controls['flightId'].errors['required']">Required</p>
+             <p [ngStyle]="{ color: 'red' }" *ngIf="bookingForm.controls['flightId'].errors['flightError']">Invalid Format</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" [disabled]="bookingForm.invalid">
+              Book
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

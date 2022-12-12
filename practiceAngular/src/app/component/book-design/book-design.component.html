@@ -20,6 +20,7 @@
           class="list-group-item"
           data-bs-toggle="modal"
           data-bs-target="#bookModal"
+          (click) = "bookDetails(list.id)"
         >
           {{ list.name }}
         </li>
@@ -46,8 +47,9 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
+        <div *ngIf="bookDetail" class="modal-body">
           Selected: 
+          Book Name: {{bookDetail.name}}
             
         </div>
         <div class="modal-footer">

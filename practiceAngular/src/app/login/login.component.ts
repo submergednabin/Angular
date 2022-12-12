@@ -17,21 +17,22 @@ export class LoginComponent {
     private formbuilder: FormBuilder
   ) {
     this.loginForm = this.formbuilder.group({
-      username:[],
-      password:[],
-    })
+      username: [],
+      password: [],
+    });
   }
-
 
   onFormSubmit(): void {
     const uname = this.loginForm.value.username;
     const pwd = this.loginForm.value.password;
-    this.loginService.isUserAuthenticated(uname, pwd).subscribe({next:(authenticated)=>{
-      if(authenticated){
-        this.router.navigate(['/books']);
-      }else {
-        this.invalidCredentialMsg = 'Invalid Credentials. Try again';
-      }
-    }});
+    this.loginService.isUserAuthenticated(uname, pwd).subscribe({
+      next: (authenticated) => {
+        if (authenticated) {
+          this.router.navigate(['/books']);
+        } else {
+          this.invalidCredentialMsg = 'Invalid Credentials. Try again';
+        }
+      },
+    });
   }
 }

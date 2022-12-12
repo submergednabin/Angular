@@ -21,4 +21,12 @@ export class CustomFormsComponent implements OnInit {
       error: (err) => this.errMsg=<any>err
     });
   }
+
+  onClickSubmit(data:any){
+    console.log(data)
+    if(data.fullname.trim()==="" || data.password.trim()===""){
+      console.log("null")
+      this.errMsg = "All field required"
+    }
+  }
 }

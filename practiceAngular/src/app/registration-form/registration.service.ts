@@ -16,12 +16,11 @@ export class RegistrationService {
 
   addRegistration(register: Registration): Observable<any> {
     const options = new HttpHeaders({ 'Content-Type': 'application/json' });
-    
-    console.log(register)
+
+    console.log(register);
     return this.http
       .post('/', register, { headers: options })
       .pipe(catchError(this.handleError));
-    
   }
   private handleError(err: HttpErrorResponse): Observable<any> {
     let errMsg = '';
@@ -39,4 +38,3 @@ export class RegistrationService {
     return throwError(() => errMsg);
   }
 }
-
